@@ -6,6 +6,7 @@ def selectionSort(arr: list) -> None:
     for i in range(len(arr) - 1, 0, -1):
         largest_index =  theLargest(arr[:i + 1])
         arr[i], arr[largest_index] = arr[largest_index], arr[i]
+    return arr
         #print(arr)
 
 def bubbleSort(arr: list):
@@ -17,7 +18,7 @@ def bubbleSort(arr: list):
                 sorted = False
             #print(arr)
     if sorted:
-        return
+        return arr
 
 def insertionSort(arr: list):
     for i in range(1, len(arr)):
@@ -28,12 +29,14 @@ def insertionSort(arr: list):
                 break
         #print(arr)
 
+    return arr
+
 
 def print_sort(arr: list, title: str, sortFunc):
     print('-' * 16 + f"{title}Sorting" + '-' * 16)
     print("arr: ", arr)
     sortFunc(arr)
-    print("sorted arr: ", arr)
+    print("sorted arr: ", sortFunc(arr))
     print()
 
 a = [8, 31, 48, 73, 3, 65, 20, 29, 11, 15]
